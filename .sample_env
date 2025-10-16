@@ -1,0 +1,8 @@
+# Choose your model provider: "gemini" or "groq"
+MODEL_PROVIDER=gemini
+
+# Google Gemini API Key (recommended - get from https://aistudio.google.com/apikey)
+GOOGLE_API_KEY=<YOUR_GOOGLE_API_KEY_HERE>
+
+# Groq API Key (alternative - get from https://console.groq.com/keys)
+GROQ_API_KEY=<YOUR_GROQ_API_KEY_HERE>

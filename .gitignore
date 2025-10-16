@@ -1,0 +1,39 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+
+# Generated projects
+generated_project/
+*_app/
+todoapp/
+
+# Debug and temporary documentation (archived)
+CHANGELOG.md
+DATAFLOW.md
+FEATURE_PROJECT_NAMING.md
+FIX_DOCUMENTATION.md
+FIX_TOOL_CALLING_ISSUE.md
+SETUP_INSTRUCTIONS.md
+UI_REDESIGN.md
+*.md.bak

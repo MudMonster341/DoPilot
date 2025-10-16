@@ -1,0 +1,25 @@
+---
+config:
+  flowchart:
+    curve: linear
+  layout: elk
+  look: neo
+  theme: default
+---
+flowchart LR
+    __start__(["<p>__start__</p>"]) --> planner("planner")
+    planner --> architect("architect")
+    architect --> coder("coder")
+    coder -.-> coder
+    coder --> security("security")
+    security -. &nbsp;PASSED&nbsp; .-> __end__(["<p>__end__</p>"])
+    security -. &nbsp;MAX_ATTEMPTS&nbsp; .-> __end__
+    security --> security_fixer("security_fixer")
+    security_fixer --> security
+     __start__:::first
+     __end__:::last
+    classDef default line-height:1.2
+    classDef first fill-opacity:0
+    classDef last fill:#bfb6fc
+    classDef security fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    class security,security_fixer security
