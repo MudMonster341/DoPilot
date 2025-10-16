@@ -37,7 +37,7 @@ if MODEL_PROVIDER == "gemini":
             "Copy .sample_env to .env and add your Google API key from https://aistudio.google.com/apikey"
         )
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-2.0-flash",
         temperature=0.2,
         max_tokens=8192,
         google_api_key=api_key
@@ -263,7 +263,7 @@ Ensure proper imports, error handling, and production-ready code.
                 lines = lines[:-1]
             code_content = '\n'.join(lines)
         
-        write_file.invoke(input_dict={"path": filepath, "content": code_content})
+        write_file.invoke({"path": filepath, "content": code_content})
         print(f"📄 Generated: {filepath}")
         coder_state.retry_attempts = 0  # Reset retry counter on success
         coder_state.current_step_idx += 1  # Move to next file on success
@@ -478,7 +478,7 @@ Output ONLY the corrected code, no explanations.
                     lines = lines[:-1]
                 corrected_content = '\n'.join(lines)
             
-            write_file.invoke(input_dict={"path": issue.file, "content": corrected_content})
+            write_file.invoke({"path": issue.file, "content": corrected_content})
             print(f"✅ Fixed security issue in: {issue.file}")
             
         except Exception as e:

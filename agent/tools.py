@@ -28,14 +28,13 @@ def safe_path_for_project(path: str) -> pathlib.Path:
 
 
 @tool
-def write_file(input_dict: Dict[str, str]) -> str:
+def write_file(path: str, content: str) -> str:
     """
     Writes content to a file at the specified path within the project root.
     Args:
-        input_dict: Dictionary with 'path' and 'content' keys
+        path: Relative path within project root where file should be written
+        content: Content to write to the file
     """
-    path = input_dict["path"]
-    content = input_dict["content"]
     p = safe_path_for_project(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "w", encoding="utf-8") as f:
